@@ -25,6 +25,7 @@
   },
   "files": [
     "lib/**/*",
-    "index.d.ts"
+    "index.ts",
+    "index.js"
   ]
 }
