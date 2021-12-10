@@ -1,28 +1,28 @@
-# 图像主色提取
+# Image Color Extraction
 
-利用 canvas 提取给定图片的主要颜色
+extract the most frequently occurred colors of a given image with canvas
 
-**[在线演示地址](http://www.xiong35.cn/color-extraction)**
+**try [online demo here](http://www.xiong35.cn/color-extraction)**
 
-[README (English edition)](./README.README.en.md)
+[中文文档](./README.md)
 
-## 牛逼的地方
+## What's Special
 
-- 用八叉树算法提取主色 🎄, 更快更强! 🚀
-- 纯 ts 编写 🤸‍♂️
-- 有详细的注释和文档 📜
-- 暴露出处理颜色的实用函数 🛠
-- 可自定义程度高 🔧
+- use octree🎄 algrithem to get better performance and faster speed!🚀
+- written in pure ts🤸‍♂️
+- detailed comments and docs📜
+- export helper functions to deal with colors🛠
+- configurable🔧
 
-## 安装
+## Install
 
 ```bash
 yarn add image-color-extraction
-# 或者
+# Or
 npm i image-color-extraction
 ```
 
-## 快速上手
+## Quick Start
 
 ```js
 import { ColorExtractor } from "image-color-extraction";
@@ -30,7 +30,7 @@ import { ColorExtractor } from "image-color-extraction";
 const extractor = new ColorExtractor();
 
 extractor
-  // 可以改成 1.jpg, 2.jpg and 4.jpg 试试😏
+  // try 1.jpg, 2.jpg and 4.jpg😏
   .extractColor("http://blog.xiong35.cn/color-extract/3.jpg")
   .then(() => {
     console.log(extractor.colors);
@@ -53,7 +53,7 @@ extractor
 
 ## Manual
 
-主类: `ColorExtractor`:
+main class `ColorExtractor`:
 
 ```ts
 const defaultConfig: Config = {
@@ -111,7 +111,7 @@ declare type ColorInfo = {
 };
 ```
 
-工具函数:
+helper functions:
 
 ```ts
 export declare function rgbToHex([r, g, b]: PixelData): string;
@@ -123,7 +123,7 @@ export declare function rgbToHex([r, g, b]: PixelData): string;
 export declare function hexToRgb(hex: string): number[];
 ```
 
-导出声明:
+exports:
 
 ```ts
 export { ColorExtractor } from "./ColorExtractor";
