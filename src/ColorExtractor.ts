@@ -4,11 +4,9 @@ import { colorsStats, Node, reduceTree } from "./octree";
 export class ColorExtractor {
   colors?: ColorInfo[];
   private config: Config = defaultConfig;
-  private canvasEl: HTMLCanvasElement;
 
   constructor(config?: Partial<Config>) {
     if (config) this.setConfig(config);
-    this.canvasEl = document.createElement("canvas");
   }
 
   /**
@@ -37,22 +35,28 @@ export class ColorExtractor {
    * @param image HTML image element
    */
   extractColor(image: HTMLImageElement): Promise<ColorInfo[]>;
+
   async extractColor(
     image: string | HTMLImageElement
   ): Promise<ColorInfo[] | undefined> {
     let imageEl: HTMLImageElement;
     if (typeof image === "string") {
       imageEl = document.createElement("img");
-      imageEl.src = image;
     } else {
       imageEl = image;
     }
+    // fix canvas cors problem
+    imageEl.crossOrigin = "Anonymous";
 
-    await new Promise((res) => {
-      imageEl.addEventListener("load", res);
+    await new Promise<void>((res) => {
+      imageEl.onload = () => {
+        res();
+      };
+      setTimeout(res, 5000);
+      if (typeof image === "string") imageEl.src = image;
     });
 
-    this._extractColor(imageEl!);
+    this._extractColor(imageEl);
 
     return this.colors;
   }
@@ -63,11 +67,10 @@ export class ColorExtractor {
     width *= this.config.compresionRate;
     height *= this.config.compresionRate;
 
-    // fix canvas cors problem
-    image.crossOrigin = "Anonymous";
-    this.canvasEl.width = width;
-    this.canvasEl.height = height;
-    const ctx = this.canvasEl.getContext("2d");
+    const canvasEl = document.createElement("canvas");
+    canvasEl.width = width;
+    canvasEl.height = height;
+    const ctx = canvasEl.getContext("2d");
     if (!ctx) throw "cannot get canvas context";
     ctx.drawImage(image, 0, 0, width, height);
 

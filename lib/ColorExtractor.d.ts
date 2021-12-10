@@ -1,7 +1,6 @@
 export declare class ColorExtractor {
     colors?: ColorInfo[];
     private config;
-    private canvasEl;
     constructor(config?: Partial<Config>);
     /**
      * reset part of the entity's config(only change the given parts)

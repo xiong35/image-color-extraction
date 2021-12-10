@@ -1,7 +1,7 @@
 export type PixelData = [number, number, number];
 
 function componentToHex(c: number) {
-  var hex = c.toString(16);
+  const hex = c.toString(16);
   return hex.length == 1 ? "0" + hex : hex;
 }
 
@@ -14,7 +14,8 @@ export function rgbToHex([r, g, b]: PixelData) {
  * @returns [r, g, b]
  */
 export function hexToRgb(hex: string) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)!;
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  if (!result) throw `\`${hex}\` is not a valid hex string`;
   return result.slice(1, 4).map((r) => parseInt(r, 16));
 }
 
@@ -33,9 +34,9 @@ export function padStart(
 
   padString = padString ? String(padString) : " ";
 
-  var pad = "";
-  var len = targetLength - _this.length;
-  var i = 0;
+  let pad = "";
+  const len = targetLength - _this.length;
+  let i = 0;
   while (pad.length < len) {
     if (!padString[i]) {
       i = 0;

@@ -1,7 +1,6 @@
 import { hexToRgb } from "./utils";
 
 /**
- *
  * @param color 7 char hex string, e.g. "#ffffff"
  * @returns
  */
