@@ -1,0 +1,29 @@
+{
+  "name": "image-color-extraction",
+  "version": "1.0.0",
+  "description": "Extract the primary colors of a given image and more!",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiong35/image-color-extraction.git"
+  },
+  "keywords": [
+    "ts",
+    "canvas"
+  ],
+  "author": "xiong35",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiong35/image-color-extraction/issues"
+  },
+  "homepage": "https://github.com/xiong35/image-color-extraction#readme",
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
