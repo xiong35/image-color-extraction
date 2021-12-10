@@ -1,4 +1,4 @@
-export declare class ColorExtract {
+export declare class ColorExtractor {
     colors?: ColorInfo[];
     private config;
     private canvasEl;

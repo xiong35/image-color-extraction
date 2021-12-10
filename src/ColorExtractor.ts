@@ -1,7 +1,7 @@
 import { chooseReadableColor } from "./readableColor";
 import { colorsStats, Node, reduceTree } from "./octree";
 
-export class ColorExtract {
+export class ColorExtractor {
   colors?: ColorInfo[];
   private config: Config = defaultConfig;
   private canvasEl: HTMLCanvasElement;
