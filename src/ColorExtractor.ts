@@ -136,7 +136,7 @@ type Config = {
 
 const defaultConfig: Config = {
   compresionRate: 0.2,
-  topColorCount: 4,
+  topColorCount: 6,
 };
 
 type ColorInfo = {
