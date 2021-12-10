@@ -27,5 +27,8 @@
     "lib/**/*",
     "index.ts",
     "index.js"
-  ]
+  ],
+  "dependencies": {
+    "image-color-extraction": "^1.0.5"
+  }
 }

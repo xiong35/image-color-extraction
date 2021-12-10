@@ -132,7 +132,7 @@ type Config = {
 };
 
 const defaultConfig: Config = {
-  compresionRate: 0.03,
+  compresionRate: 0.2,
   topColorCount: 4,
 };
 
