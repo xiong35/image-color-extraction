@@ -1,6 +1,6 @@
 {
   "name": "image-color-extraction",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Extract the primary colors of a given image and more!",
   "main": "index.js",
   "scripts": {
