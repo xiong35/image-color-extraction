@@ -16,6 +16,7 @@ export class ColorExtractor {
    * @param config part of the new config
    */
   setConfig(config: Partial<Config>) {
+    if (!config) throw "config must not be empty";
     if (config.compresionRate !== undefined && config.compresionRate < 0)
       throw "compresion rate must not be negative";
 
@@ -111,6 +112,8 @@ export class ColorExtractor {
     if (!this.colors)
       throw "you haven't extracted colors, please call `extractColor` first";
 
+    if (this.colors.length < 2)
+      throw "cannot generete two colors because there is only one color in this image";
     return chooseReadableColor(this.colors.map((c) => c.color));
   }
 }
