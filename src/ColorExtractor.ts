@@ -42,7 +42,7 @@ export class ColorExtractor {
   ): Promise<ColorInfo[] | undefined> {
     let imageEl: HTMLImageElement;
     if (typeof image === "string") {
-      const imageEl = document.createElement("img");
+      imageEl = document.createElement("img");
       imageEl.src = image;
     } else {
       imageEl = image;
