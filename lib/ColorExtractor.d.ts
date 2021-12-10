@@ -1,9 +1,37 @@
+/**
+ * ## usage
+ *
+ * ```js
+ * import { ColorExtractor } from "image-color-extraction";
+ *
+ * const extractor = new ColorExtractor();
+ *
+ * extractor
+ *   .extractColor("http://blog.xiong35.cn/color-extract/3.jpg")
+ *   .then(() => {
+ *     console.log(extractor.colors);
+ *     //  [
+ *     //    {color: '#383143', count: 296014},
+ *     //    {color: '#d6bca9', count: 87642},
+ *     //    {color: '#a35560', count: 58061},
+ *     //    {color: '#d39470', count: 18149},
+ *     //    {color: '#666187', count: 13415},
+ *     //    {color: '#9e6d8c', count: 12094},
+ *     //  ]
+ *     console.log(extractor.chooseReadableColor());
+ *     //  ['#383143', '#d6bca9']
+ *  });
+ * ```
+ *
+ * more detail on
+ */
 export declare class ColorExtractor {
+    /** read the extracted colors from here */
     colors?: ColorInfo[];
     private config;
     constructor(config?: Partial<Config>);
     /**
-     * reset part of the entity's config(only change the given parts)
+     * reset part of the entity's config(only overide the given parts)
      * @param config part of the new config
      */
     setConfig(config: Partial<Config>): void;
