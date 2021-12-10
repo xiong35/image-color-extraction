@@ -23,7 +23,7 @@
  *  });
  * ```
  *
- * more detail on
+ * more detail on [manual book](https://github.com/xiong35/image-color-extraction#manual)
  */
 export declare class ColorExtractor {
     /** read the extracted colors from here */

@@ -26,7 +26,7 @@ import { colorsStats, Node, reduceTree } from "./octree";
  *  });
  * ```
  *
- * more detail on
+ * more detail on [manual book](https://github.com/xiong35/image-color-extraction#manual)
  */
 export class ColorExtractor {
   /** read the extracted colors from here */
