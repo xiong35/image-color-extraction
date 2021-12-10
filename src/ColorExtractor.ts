@@ -6,8 +6,8 @@ export class ColorExtractor {
   private config: Config = defaultConfig;
   private canvasEl: HTMLCanvasElement;
 
-  constructor(config: Partial<Config>) {
-    this.setConfig(config);
+  constructor(config?: Partial<Config>) {
+    if (config) this.setConfig(config);
     this.canvasEl = document.createElement("canvas");
   }
 
