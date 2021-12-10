@@ -154,13 +154,13 @@ type Config = {
    * compress the given image to get faster speed\
    * a `400 * 600` image * rate of 0.5 => a `200 * 300` image\
    * the speed will be 4 times faster than before compression\
-   * default to 0.03
+   * default to 0.2
    */
   compresionRate: number;
   /**
    * reduce the color of a image to this count\
    * (e.g. set topColorCount to 4 to extract the top 4 colors)\
-   * default to 4
+   * default to 6
    */
   topColorCount: number;
 };
