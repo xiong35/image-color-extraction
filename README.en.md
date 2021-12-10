@@ -2,7 +2,7 @@
 
 extract the most frequently occurred colors of a given image with canvas
 
-**try [online demo here](http://www.xiong35.cn/color-extraction)**
+**try [online demo here](http://www.xiong35.cn/color-extraction/)**
 
 [中文文档](https://github.com/xiong35/image-color-extraction/blob/main/README.md)
 

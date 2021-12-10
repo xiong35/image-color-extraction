@@ -2,7 +2,7 @@
 
 利用 canvas 提取给定图片的主要颜色
 
-**[在线演示地址](http://www.xiong35.cn/color-extraction)**
+**[在线演示地址](http://www.xiong35.cn/color-extraction/)**
 
 [README (English edition)](https://github.com/xiong35/image-color-extraction/blob/main/README.en.md)
 
