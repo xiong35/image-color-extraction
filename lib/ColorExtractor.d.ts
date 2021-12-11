@@ -67,6 +67,13 @@ declare type Config = {
      * default to 6
      */
     topColorCount: number;
+    /**
+     * set the max time for a image to load\
+     * if a image is not loaded after this time the extraction will fail and the pixels will all be #000000\
+     * set to non-positive value to disable timeout\
+     * default to `1000 * 10`
+     */
+    timeout: number;
 };
 declare type ColorInfo = {
     color: string;
