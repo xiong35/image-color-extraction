@@ -45,6 +45,8 @@ export class ColorExtractor {
     if (!config) throw "config must not be empty";
     if (config.compresionRate !== undefined && config.compresionRate < 0)
       throw "compresion rate must not be negative";
+    if (config.timeout !== undefined && typeof config.timeout !== "number")
+      throw "timeout must be number";
 
     (Object.keys(config) as (keyof Config)[]).forEach((k) => {
       const newVal = config[k];
@@ -80,7 +82,9 @@ export class ColorExtractor {
       imageEl.onload = () => {
         res();
       };
-      setTimeout(res, 5000);
+      if (this.config.timeout >= 0) {
+        setTimeout(res, this.config.timeout);
+      }
       if (typeof image === "string") imageEl.src = image;
     });
 
@@ -163,11 +167,19 @@ type Config = {
    * default to 6
    */
   topColorCount: number;
+  /**
+   * set the max time for a image to load\
+   * if a image is not loaded after this time the extraction will fail and the pixels will all be #000000\
+   * set to non-positive value to disable timeout\
+   * default to `1000 * 10`
+   */
+  timeout: number;
 };
 
 const defaultConfig: Config = {
   compresionRate: 0.2,
   topColorCount: 6,
+  timeout: 1000 * 10,
 };
 
 type ColorInfo = {
