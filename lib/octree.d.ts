@@ -34,4 +34,7 @@ export declare class Node {
     addColor(color: PixelData, level: number): void;
 }
 export declare function reduceTree(): void;
+/**
+ * [source code here](https://github.com/xiong35/image-color-extraction/blob/main/src/octree.ts)
+ */
 export declare function colorsStats(node: Node, record: Record<string, number>): void;
