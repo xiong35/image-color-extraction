@@ -5,11 +5,15 @@ function componentToHex(c: number) {
   return hex.length == 1 ? "0" + hex : hex;
 }
 
+/**
+ * [source code here](https://github.com/xiong35/image-color-extraction/blob/main/src/utils.ts)
+ */
 export function rgbToHex([r, g, b]: PixelData) {
   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
 /**
+ * [source code here](https://github.com/xiong35/image-color-extraction/blob/main/src/utils.ts)
  * @param hex 7 char hex string, e.g. "#ffffff"
  * @returns [r, g, b]
  */

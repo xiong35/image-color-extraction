@@ -102,6 +102,9 @@ export function reduceTree() {
   Node.leafNum++;
 }
 
+/**
+ * [source code here](https://github.com/xiong35/image-color-extraction/blob/main/src/octree.ts)
+ */
 export function colorsStats(node: Node, record: Record<string, number>) {
   if (node.isLeaf) {
     const color = rgbToHex([
