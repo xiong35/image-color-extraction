@@ -51,6 +51,10 @@ extractor
   });
 ```
 
+## Use in Ur project
+
+ref: [xiong35/image-color-extraction-demo](https://github.com/xiong35/image-color-extraction-demo)
+
 ## Manual
 
 main class `ColorExtractor`:

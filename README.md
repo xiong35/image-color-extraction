@@ -51,6 +51,10 @@ extractor
   });
 ```
 
+## 在项目中使用
+
+见 [xiong35/image-color-extraction-demo](https://github.com/xiong35/image-color-extraction-demo)
+
 ## Manual
 
 主类: `ColorExtractor`:
